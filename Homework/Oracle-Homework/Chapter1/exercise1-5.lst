@@ -1,0 +1,9 @@
+--> /********** Exercise 1-5 **********/
+--> SELECT sysdate, user
+  2  FROM DUAL;
+
+SYSDATE         USER                                                                                
+--------------- --------                                                                            
+01-JUN-22       DAW59                                                                               
+
+--> SPOOL OFF

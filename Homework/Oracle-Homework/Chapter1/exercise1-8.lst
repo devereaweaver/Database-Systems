@@ -1,0 +1,11 @@
+--> HELP PASSWORD
+
+ PASSWORD
+ --------
+
+ Allows you to change a password without displaying it on an input device.
+
+ PASSW[ORD] [username]
+
+
+--> SPOOL OFF

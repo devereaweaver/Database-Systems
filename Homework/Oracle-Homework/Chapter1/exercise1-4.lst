@@ -1,0 +1,190 @@
+-->  /********** Exercise 1-4 **********/
+-->  
+-->  /* Part a */
+-->  SELECT * FROM Prereq;
+
+COURSE_NUMBER   PREREQ                                                                              
+--------------- ------------------------                                                            
+ACCT3333        ACCT2220                                                                            
+CHEM3001        CHEM2001                                                                            
+COSC3320        COSC1310                                                                            
+COSC3380        COSC3320                                                                            
+COSC3380        MATH2410                                                                            
+COSC5234        COSC3320                                                                            
+ENGL1011        ENGL1010                                                                            
+ENGL3401        ENGL1011                                                                            
+ENGL3520        ENGL1011                                                                            
+MATH5501        MATH2333                                                                            
+POLY2103        POLY1201                                                                            
+POLY5501        POLY4103                                                                            
+
+12 rows selected.
+
+
+-->  /* Part b */
+-->  c /Prereq/Course/
+  1* SELECT * FROM Course
+-->  l
+  1* SELECT * FROM Course
+-->  /
+
+COURSE_NAME               COURSE_NUMBER   CREDIT_HOURS OFFERING_DEP                                 
+------------------------- --------------- ------------ ------------                                 
+ACCOUNTING I              ACCT2020                   3 ACCT                                         
+ACCOUNTING II             ACCT2220                   3 ACCT                                         
+MANAGERIAL FINANCE        ACCT3333                   3 ACCT                                         
+ACCOUNTING INFO SYST      ACCT3464                   3 ACCT                                         
+INTRO TO COMPUTER SC      COSC1310                   4 COSC                                         
+TURBO PASCAL              COSC2025                   3 COSC                                         
+ADVANCED COBOL            COSC2303                   3 COSC                                         
+DATA STRUCTURES           COSC3320                   4 COSC                                         
+DATABASE                  COSC3380                   3 COSC                                         
+OPERATIONS RESEARCH       COSC3701                   3 COSC                                         
+ADVANCED ASSEMBLER        COSC4301                   3 COSC                                         
+SYSTEM PROJECT            COSC4309                   3 COSC                                         
+ADA - INTRODUCTION        COSC5234                   4 COSC                                         
+NETWORKS                  COSC5920                   3 COSC                                         
+ENGLISH COMP I            ENGL1010                   3 ENGL                                         
+ENGLISH COMP II           ENGL1011                   3 ENGL                                         
+WRITING FOR NON MAJO      ENGL3520                   2 ENGL                                         
+ALGEBRA                   MATH2333                   3 MATH                                         
+DISCRETE MATHEMATICS      MATH2410                   3 MATH                                         
+CALCULUS 1                MATH1501                   4 MATH                                         
+AMERICAN CONSTITUTIO      POLY1201                   1 POLY                                         
+INTRO TO POLITICAL S      POLY2001                   3 POLY                                         
+AMERICAN GOVERNMENT       POLY2103                   2 POLY                                         
+SOCIALISM AND COMMUN      POLY4103                   4 POLY                                         
+POLITICS OF CUBA          POLY5501                   4 POLY                                         
+TECHNICAL WRITING         ENGL3402                   2 ENGL                                         
+FUND. TECH. WRITING       ENGL3401                   3 ENGL                                         
+INTRO TO CHEMISTRY        CHEM2001                   3 CHEM                                         
+ORGANIC CHEMISTRY         CHEM3001                   3 CHEM                                         
+CALCULUS 2                MATH1502                   3 MATH                                         
+CALCULUS 3                MATH1503                   3 MATH                                         
+MATH ANALYSIS             MATH5501                   3 MATH                                         
+
+32 rows selected.
+
+
+-->  /* Part c */
+-->  i
+  3  WHERE offering_dept = 'COSC'
+  4  ;
+
+COURSE_NAME               COURSE_NUMBER   CREDIT_HOURS OFFERING_DEP                                 
+------------------------- --------------- ------------ ------------                                 
+INTRO TO COMPUTER SC      COSC1310                   4 COSC                                         
+TURBO PASCAL              COSC2025                   3 COSC                                         
+ADVANCED COBOL            COSC2303                   3 COSC                                         
+DATA STRUCTURES           COSC3320                   4 COSC                                         
+DATABASE                  COSC3380                   3 COSC                                         
+OPERATIONS RESEARCH       COSC3701                   3 COSC                                         
+ADVANCED ASSEMBLER        COSC4301                   3 COSC                                         
+SYSTEM PROJECT            COSC4309                   3 COSC                                         
+ADA - INTRODUCTION        COSC5234                   4 COSC                                         
+NETWORKS                  COSC5920                   3 COSC                                         
+
+10 rows selected.
+
+-->  l
+  1  SELECT *
+  2  FROM COURSE
+  3  WHERE offering_dept = 'COSC'
+  4* 
+
+
+-->  /* Part d */
+-->  1
+  1* SELECT *
+-->  c /*/course_name/
+  1* SELECT course_name
+-->  l
+  1  SELECT course_name
+  2  FROM COURSE
+  3  WHERE offering_dept = 'COSC'
+  4* 
+-->  /
+
+COURSE_NAME                                                                                         
+-------------------------                                                                           
+INTRO TO COMPUTER SC                                                                                
+TURBO PASCAL                                                                                        
+ADVANCED COBOL                                                                                      
+DATA STRUCTURES                                                                                     
+DATABASE                                                                                            
+OPERATIONS RESEARCH                                                                                 
+ADVANCED ASSEMBLER                                                                                  
+SYSTEM PROJECT                                                                                      
+ADA - INTRODUCTION                                                                                  
+NETWORKS                                                                                            
+
+10 rows selected.
+
+
+-->  /* Part e */
+-->  del 3
+-->  l
+  1  SELECT course_name
+  2  FROM COURSE
+  3* 
+-->  /
+
+COURSE_NAME                                                                                         
+-------------------------                                                                           
+ACCOUNTING I                                                                                        
+ACCOUNTING II                                                                                       
+MANAGERIAL FINANCE                                                                                  
+ACCOUNTING INFO SYST                                                                                
+INTRO TO COMPUTER SC                                                                                
+TURBO PASCAL                                                                                        
+ADVANCED COBOL                                                                                      
+DATA STRUCTURES                                                                                     
+DATABASE                                                                                            
+OPERATIONS RESEARCH                                                                                 
+ADVANCED ASSEMBLER                                                                                  
+SYSTEM PROJECT                                                                                      
+ADA - INTRODUCTION                                                                                  
+NETWORKS                                                                                            
+ENGLISH COMP I                                                                                      
+ENGLISH COMP II                                                                                     
+WRITING FOR NON MAJO                                                                                
+ALGEBRA                                                                                             
+DISCRETE MATHEMATICS                                                                                
+CALCULUS 1                                                                                          
+AMERICAN CONSTITUTIO                                                                                
+INTRO TO POLITICAL S                                                                                
+AMERICAN GOVERNMENT                                                                                 
+SOCIALISM AND COMMUN                                                                                
+POLITICS OF CUBA                                                                                    
+TECHNICAL WRITING                                                                                   
+FUND. TECH. WRITING                                                                                 
+INTRO TO CHEMISTRY                                                                                  
+ORGANIC CHEMISTRY                                                                                   
+CALCULUS 2                                                                                          
+CALCULUS 3                                                                                          
+MATH ANALYSIS                                                                                       
+
+32 rows selected.
+
+
+-->  /* Part f */
+-->  i
+  4  WHERE offering_dept = 'MATH';
+
+COURSE_NAME                                                                                         
+-------------------------                                                                           
+ALGEBRA                                                                                             
+DISCRETE MATHEMATICS                                                                                
+CALCULUS 1                                                                                          
+CALCULUS 2                                                                                          
+CALCULUS 3                                                                                          
+MATH ANALYSIS                                                                                       
+
+6 rows selected.
+
+-->  l
+  1  SELECT course_name
+  2  FROM COURSE
+  3  
+  4* WHERE offering_dept = 'MATH'
+-->  SPOOL OFF

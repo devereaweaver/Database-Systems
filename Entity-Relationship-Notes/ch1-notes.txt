@@ -1,0 +1,115 @@
+Chapter 1 - Data, Databases, and the Software Engineering Process
+======================================================================
+1.2 - Data
+----------------------------------------------------------------------
+
+data - facts about something or someone 
+
+database - collection of related data 
+	* related - a common characteristic that ties the data together 
+
+
+----------------------------------------------------------------------
+1.4 - What is the Software Engineering Process?
+----------------------------------------------------------------------
+software engineering - process of specifying, designing, writing, 
+delivering, maintaining, and retiring software 
+
+"players" in software development life cycle:
+	1. user - uses software
+	2. analyst - design software
+
+Software (Database) Development Process (Waterfall model): 
+	1. Requirement - find out what user wants/needs (eludicdation)
+	2. Specification - write what user wants/needs PRECISELY
+		* document costs and time 
+		2a. Feed back the specification to the user - formal review
+		2b. Redo the specification as needed and return to 2a 
+	3. Design - software is designed to meet the specification 
+		* draw up blueprints 
+		3a. Design is checked against specification
+	4. Development - software is written; database is created 
+		4a. During development, check software against design 
+			* database is created and populated 
+	5. Implementation - software turned over for user to be used 
+		in application 
+		5a. User tests software - accept or reject 
+	6. Maintenance - some parts may fail, requirements change, etc. 
+		* time-consuming and expensive 
+	7. Retirement - eventually software becomes outdated
+
+When software (databases) are retired, the SE process begins anew. 
+
+----------------------------------------------------------------------
+1.5 - Entity Relationship Diagrams and the SE Life Cycle 
+----------------------------------------------------------------------
+NOTE: The text for this course focuses on steps 1 - 3 above 
+
+related data - databases stores info about one enterprise, organization,
+	busines, group of related people or processes
+
+	* it's not appropriate to keep unrelated entities in the same 
+	database, just keep a database about each separately
+
+Entity Relationship (ER) Diagram - blueprint from which actual data 
+	are stored, output of the design phase 
+
+Users vs. Analysts:
+* users are typically successful at a business, they understand the 
+  business model
+
+* user descriptions may be vague and unstructured 
+
+* analysts may be ignorant of the business but understands the computer end 
+  of the problem 
+
+Review of Early Steps in SE Life Cycle Applied to Database Design:
+
+Phase 1: Get Requirements for the Database
+	* listen/ask questions about what data the user wants to organize
+	into a database retrieval system 
+
+Phase 2: Specify the Database 
+	* descriptions and diagrams of what analyst thinks user wants 
+	* usually accomplished with an ER diagram as blueprint for 
+	  to-be-designed database 
+
+Phase 3: Design the Database 
+	* once finalized, ER diagram become blueprint for construction
+	  of the database
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

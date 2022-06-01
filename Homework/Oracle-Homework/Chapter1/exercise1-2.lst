@@ -1,0 +1,34 @@
+-->  /********* Exercise 1-2 **********/
+-->  CREATE SYNONYM Student FOR rearp.Student;
+
+Synonym created.
+
+
+-->  DESC Student;  
+ Name                                                  Null?    Type
+ ----------------------------------------------------- -------- ------------------------------------
+ STNO                                                  NOT NULL NUMBER(38)
+ SNAME                                                          VARCHAR2(20)
+ MAJOR                                                          VARCHAR2(4)
+ CLASS                                                          NUMBER(38)
+ BDATE                                                          DATE
+
+SELECT * FROM Student    -- only select first 10 rows
+WHERE ROWNUM < 11;
+
+      STNO SNAME                MAJOR             CLASS BDATE                                       
+---------- -------------------- ------------ ---------- ---------------                             
+         2 Lineas               ENGL                  1 15-APR-01                                   
+         3 Mary                 COSC                  4 16-JUL-98                                   
+         8 Brenda               COSC                  2 13-AUG-97                                   
+        10 Richard              ENGL                  1 13-MAY-01                                   
+        13 Kelly                MATH                  4 12-AUG-01                                   
+        14 Lujack               COSC                  1 12-FEB-97                                   
+        15 Reva                 MATH                  2 10-JUN-01                                   
+        17 Elainie              COSC                  1 12-AUG-96                                   
+        19 Harley               POLY                  2 16-APR-02                                   
+        20 Donald               ACCT                  4 15-OCT-97                                   
+
+10 rows selected.
+
+-->  SPOOL OFF

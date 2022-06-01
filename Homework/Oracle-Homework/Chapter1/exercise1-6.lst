@@ -1,0 +1,14 @@
+--> /********** Exercise 1-6 **********/
+--> SHOW ALL    -- show system parameters
+appinfo is OFF and set to "SQL*Plus"
+arraysize 15
+autocommit OFF
+autoprint OFF
+autorecovery OFF
+autotrace OFF
+blockterminator "." (hex 2e)
+btitle OFF and is the first few characters of the next SELECT statement
+cmdsep OFF
+colinvisible OFF
+
+--> SPOOL OFF

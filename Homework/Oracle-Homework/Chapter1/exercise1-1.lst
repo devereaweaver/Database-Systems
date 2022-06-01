@@ -1,0 +1,10 @@
+💰👉 /**********  Exercise 1-1  **********/
+💰👉 DESC rearp.Course
+ Name                                                  Null?    Type
+ ----------------------------------------------------- -------- ------------------------------------
+ COURSE_NAME                                                    VARCHAR2(20)
+ COURSE_NUMBER                                         NOT NULL VARCHAR2(8)
+ CREDIT_HOURS                                                   NUMBER(38)
+ OFFERING_DEPT                                                  VARCHAR2(4)
+
+💰👉 SPOOL OFF
