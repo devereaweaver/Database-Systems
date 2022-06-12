@@ -1,0 +1,368 @@
+--> /* Part a */
+--> SELECT * FROM Cust1;
+
+CNUM             BAL                                                                                
+--------- ----------                                                                                
+102              400                                                                                
+103              600                                                                                
+104              800                                                                                
+
+--> COMMIT
+  2  ;
+
+Commit complete.
+
+--> /* Part b */
+--> ALTER TABLE Cust1
+  2  ADD date_opened DATE;
+
+Table altered.
+
+--> SELECT * FROM Cust1;
+
+CNUM             BAL DATE_OPENED                                                                    
+--------- ---------- ---------------                                                                
+102              400                                                                                
+103              600                                                                                
+104              800                                                                                
+
+--> /* Part c */
+--> /* Set all date_opened to 01-JAN-23' */
+--> UPDATE Cust1
+  2  SET date_opened = '01-JAN-23';
+
+3 rows updated.
+
+--> SELECT * FROM Cust1;
+
+CNUM             BAL DATE_OPENED                                                                    
+--------- ---------- ---------------                                                                
+102              400 01-JAN-23                                                                      
+103              600 01-JAN-23                                                                      
+104              800 01-JAN-23                                                                      
+
+--> COMMIT
+  2  ;
+
+Commit complete.
+
+--> /* Part d */
+--> /* set all balances to 0 */
+--> UPDATE Cust1
+  2  SET bal = 0;
+
+3 rows updated.
+
+--> SELECT * FROM Cust1;
+
+CNUM             BAL DATE_OPENED                                                                    
+--------- ---------- ---------------                                                                
+102                0 01-JAN-23                                                                      
+103                0 01-JAN-23                                                                      
+104                0 01-JAN-23                                                                      
+
+--> ROLLBACK;
+
+Rollback complete.
+
+--> SELECT * FROM Cust1;
+
+CNUM             BAL DATE_OPENED                                                                    
+--------- ---------- ---------------                                                                
+102              400 01-JAN-23                                                                      
+103              600 01-JAN-23                                                                      
+104              800 01-JAN-23                                                                      
+
+--> /* Part e */
+--> UPDATE Cust1
+  2  SET date_opened = '21-OCT-23'
+  3  WHERE cnum = 102;
+
+1 row updated.
+
+--> SELECT * FROM Cust1;
+
+CNUM             BAL DATE_OPENED                                                                    
+--------- ---------- ---------------                                                                
+102              400 21-OCT-23                                                                      
+103              600 01-JAN-23                                                                      
+104              800 01-JAN-23                                                                      
+
+--> /* Part f*/
+--> ALTER TABLE Cust1
+  2  MODIFY bal NUMERIC(8,2);
+
+Table altered.
+
+--> SELECT * FROM Cust1;
+
+CNUM             BAL DATE_OPENED                                                                    
+--------- ---------- ---------------                                                                
+102              400 21-OCT-23                                                                      
+103              600 01-JAN-23                                                                      
+104              800 01-JAN-23                                                                      
+
+--> UPDATE Cust1
+  2  SET bal = 888.88
+  3  WHERE cnum = 102;
+
+1 row updated.
+
+--> SELECT * FROM Cust1;
+
+CNUM             BAL DATE_OPENED                                                                    
+--------- ---------- ---------------                                                                
+102           888.88 21-OCT-23                                                                      
+103              600 01-JAN-23                                                                      
+104              800 01-JAN-23                                                                      
+
+--> /* Part g */
+--> ALTER TABLE Cust1
+  2  MODIFY bal NUMERIC(3,2);
+MODIFY bal NUMERIC(3,2)
+       *
+ERROR at line 2:
+ORA-01440: column to be modified must be empty to decrease precision or scale 
+
+
+--> /* TO DO: ADD EXPLAINATION FOR THIS IN SUBMISSION */
+--> /* Part h */
+--> UPDATE Cust1
+  2  SET date_opened = SYSDATE;
+
+3 rows updated.
+
+--> SELECT * FROM Cust1;
+
+CNUM             BAL DATE_OPENED                                                                    
+--------- ---------- ---------------                                                                
+102           888.88 07-JUN-22                                                                      
+103              600 07-JUN-22                                                                      
+104              800 07-JUN-22                                                                      
+
+--> /* Part i */
+--> DROP TABLE Cust1;
+
+Table dropped.
+
+--> SELECT * FROM tab;
+
+TNAME                                                                                               
+------------------------------------------------------------------------------------------          
+TABTYPE                CLUSTERID                                                                    
+--------------------- ----------                                                                    
+TIME_SLOT                                                                                           
+TABLE                                                                                               
+                                                                                                    
+STUDENT                                                                                             
+SYNONYM                                                                                             
+                                                                                                    
+SECTION                                                                                             
+SYNONYM                                                                                             
+                                                                                                    
+ROOM                                                                                                
+SYNONYM                                                                                             
+                                                                                                    
+PREREQ                                                                                              
+SYNONYM                                                                                             
+                                                                                                    
+NAMES                                                                                               
+TABLE                                                                                               
+                                                                                                    
+INSTRUCTOR                                                                                          
+TABLE                                                                                               
+                                                                                                    
+GRADES                                                                                              
+SYNONYM                                                                                             
+                                                                                                    
+EMPLOYEE                                                                                            
+TABLE                                                                                               
+                                                                                                    
+DEPMAJ                                                                                              
+SYNONYM                                                                                             
+                                                                                                    
+DEPARTMENT                                                                                          
+TABLE                                                                                               
+                                                                                                    
+CUSTOMER2                                                                                           
+TABLE                                                                                               
+                                                                                                    
+CUSTOMER                                                                                            
+TABLE                                                                                               
+                                                                                                    
+CUST                                                                                                
+TABLE                                                                                               
+                                                                                                    
+COURSE_COPY                                                                                         
+TABLE                                                                                               
+                                                                                                    
+COURSE                                                                                              
+SYNONYM                                                                                             
+                                                                                                    
+CLASSROOM                                                                                           
+TABLE                                                                                               
+                                                                                                    
+BIN$yv8ncRwnSBG3te76QRH4sg==$0                                                                      
+TABLE                                                                                               
+                                                                                                    
+BIN$s0diIs6VQVuxHUUPgC3RGA==$0                                                                      
+TABLE                                                                                               
+                                                                                                    
+BIN$J9niA2zHQm2AYdOSvfkVuQ==$0                                                                      
+TABLE                                                                                               
+                                                                                                    
+
+20 rows selected.
+
+--> DESC tab
+ Name                                                  Null?    Type
+ ----------------------------------------------------- -------- ------------------------------------
+ TNAME                                                 NOT NULL VARCHAR2(30)
+ TABTYPE                                                        VARCHAR2(7)
+ CLUSTERID                                                      NUMBER
+
+--> column format name a15
+SP2-0158: unknown COLUMN option "name"
+--> column name format a15
+--> l
+  1* SELECT * FROM tab
+--> /
+
+TNAME                                                                                               
+------------------------------------------------------------------------------------------          
+TABTYPE                CLUSTERID                                                                    
+--------------------- ----------                                                                    
+TIME_SLOT                                                                                           
+TABLE                                                                                               
+                                                                                                    
+STUDENT                                                                                             
+SYNONYM                                                                                             
+                                                                                                    
+SECTION                                                                                             
+SYNONYM                                                                                             
+                                                                                                    
+ROOM                                                                                                
+SYNONYM                                                                                             
+                                                                                                    
+PREREQ                                                                                              
+SYNONYM                                                                                             
+                                                                                                    
+NAMES                                                                                               
+TABLE                                                                                               
+                                                                                                    
+INSTRUCTOR                                                                                          
+TABLE                                                                                               
+                                                                                                    
+GRADES                                                                                              
+SYNONYM                                                                                             
+                                                                                                    
+EMPLOYEE                                                                                            
+TABLE                                                                                               
+                                                                                                    
+DEPMAJ                                                                                              
+SYNONYM                                                                                             
+                                                                                                    
+DEPARTMENT                                                                                          
+TABLE                                                                                               
+                                                                                                    
+CUSTOMER2                                                                                           
+TABLE                                                                                               
+                                                                                                    
+CUSTOMER                                                                                            
+TABLE                                                                                               
+                                                                                                    
+CUST                                                                                                
+TABLE                                                                                               
+                                                                                                    
+COURSE_COPY                                                                                         
+TABLE                                                                                               
+                                                                                                    
+COURSE                                                                                              
+SYNONYM                                                                                             
+                                                                                                    
+CLASSROOM                                                                                           
+TABLE                                                                                               
+                                                                                                    
+BIN$yv8ncRwnSBG3te76QRH4sg==$0                                                                      
+TABLE                                                                                               
+                                                                                                    
+BIN$s0diIs6VQVuxHUUPgC3RGA==$0                                                                      
+TABLE                                                                                               
+                                                                                                    
+BIN$J9niA2zHQm2AYdOSvfkVuQ==$0                                                                      
+TABLE                                                                                               
+                                                                                                    
+
+20 rows selected.
+
+--> colmn tname format a15
+SP2-0734: unknown command beginning "colmn tnam..." - rest of line ignored.
+--> column tname format a15
+--> /
+
+TNAME           TABTYPE                CLUSTERID                                                    
+--------------- --------------------- ----------                                                    
+TIME_SLOT       TABLE                                                                               
+STUDENT         SYNONYM                                                                             
+SECTION         SYNONYM                                                                             
+ROOM            SYNONYM                                                                             
+PREREQ          SYNONYM                                                                             
+NAMES           TABLE                                                                               
+INSTRUCTOR      TABLE                                                                               
+GRADES          SYNONYM                                                                             
+EMPLOYEE        TABLE                                                                               
+DEPMAJ          SYNONYM                                                                             
+DEPARTMENT      TABLE                                                                               
+CUSTOMER2       TABLE                                                                               
+CUSTOMER        TABLE                                                                               
+CUST            TABLE                                                                               
+COURSE_COPY     TABLE                                                                               
+COURSE          SYNONYM                                                                             
+CLASSROOM       TABLE                                                                               
+BIN$yv8ncRwnSBG TABLE                                                                               
+3te76QRH4sg==$0                                                                                     
+                                                                                                    
+BIN$s0diIs6VQVu TABLE                                                                               
+xHUUPgC3RGA==$0                                                                                     
+                                                                                                    
+BIN$J9niA2zHQm2 TABLE                                                                               
+AYdOSvfkVuQ==$0                                                                                     
+                                                                                                    
+
+20 rows selected.
+
+--> column tabtype format a15
+--> /
+
+TNAME           TABTYPE          CLUSTERID                                                          
+--------------- --------------- ----------                                                          
+TIME_SLOT       TABLE                                                                               
+STUDENT         SYNONYM                                                                             
+SECTION         SYNONYM                                                                             
+ROOM            SYNONYM                                                                             
+PREREQ          SYNONYM                                                                             
+NAMES           TABLE                                                                               
+INSTRUCTOR      TABLE                                                                               
+GRADES          SYNONYM                                                                             
+EMPLOYEE        TABLE                                                                               
+DEPMAJ          SYNONYM                                                                             
+DEPARTMENT      TABLE                                                                               
+CUSTOMER2       TABLE                                                                               
+CUSTOMER        TABLE                                                                               
+CUST            TABLE                                                                               
+COURSE_COPY     TABLE                                                                               
+COURSE          SYNONYM                                                                             
+CLASSROOM       TABLE                                                                               
+BIN$yv8ncRwnSBG TABLE                                                                               
+3te76QRH4sg==$0                                                                                     
+                                                                                                    
+BIN$s0diIs6VQVu TABLE                                                                               
+xHUUPgC3RGA==$0                                                                                     
+                                                                                                    
+BIN$J9niA2zHQm2 TABLE                                                                               
+AYdOSvfkVuQ==$0                                                                                     
+                                                                                                    
+
+20 rows selected.
+
+--> SPOOL OFF

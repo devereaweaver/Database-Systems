@@ -1,0 +1,34 @@
+--> /* Exercise 2-3 */
+--> SELECT sname, class, major
+  2  FROM Student
+  3  WHERE class <= 2
+  4  ORDER BY class DESC;
+
+SNAME                CLASS MAJO                                                                     
+--------------- ---------- ----                                                                     
+Brenda                   2 COSC                                                                     
+Sebastian                2 ACCT                                                                     
+Smithly                  2 ENGL                                                                     
+Alan                     2 COSC                                                                     
+Cedric                   2 ENGL                                                                     
+Jessica                  2 POLY                                                                     
+Sadie                    2 MATH                                                                     
+Harley                   2 POLY                                                                     
+Reva                     2 MATH                                                                     
+Jake                     2 MATH                                                                     
+George                   1 POLY                                                                     
+Lindsay                  1 UNKN                                                                     
+Hillary1                 1 COSC                                                                     
+Lynette                  1 POLY                                                                     
+Fraiser                  1 POLY                                                                     
+Lineas                   1 ENGL                                                                     
+Brad                     1 COSC                                                                     
+Lujack                   1 COSC                                                                     
+Richard                  1 ENGL                                                                     
+Steve                    1 ENGL                                                                     
+Elainie                  1 COSC                                                                     
+
+21 rows selected.
+
+--> 
+--> SPOOL OFF

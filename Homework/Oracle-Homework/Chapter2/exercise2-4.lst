@@ -1,0 +1,12 @@
+--> /* Exercise 2-4 */
+--> SELECT *
+  2  FROM Cust
+  3  WHERE balance > 400;
+
+CUST_NAME ADDRESS             BALANCE                                                               
+--------- ---------------- ----------                                                               
+103       103 Main Street         600                                                               
+104       104 Main Street         800                                                               
+105       105 Main Street        1000                                                               
+
+--> SPOOL OFF

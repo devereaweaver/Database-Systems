@@ -1,0 +1,10 @@
+--> SELECT sname, major, class
+  2  FROM Student
+  3  WHERE major = 'ART'
+  4  	AND class = 3;
+
+SNAME        MAJO      CLASS                                                                        
+------------ ---- ----------                                                                        
+Gus          ART           3                                                                        
+
+--> SPOOL OFF

@@ -1,0 +1,139 @@
+--> CREATE TABLE Cust1(
+  2  cnum CHAR(3),
+  3  bal NUMERIC(5)
+  4  );
+
+Table created.
+
+--> /* Copy contents to new table */
+--> INSERT INTO Cust1
+  2  SELECT cust_num, balance
+  3  FROM Cust
+  4  WHERE ROWNUM < 5;
+
+4 rows created.
+
+--> /* Part b */
+--> SELECT * FROM Cust1;
+
+CNUM             BAL                                                                                
+--------- ----------                                                                                
+101              200                                                                                
+102              400                                                                                
+103              600                                                                                
+104              800                                                                                
+
+--> COMMIT;
+
+Commit complete.
+--> /* Part c */
+--> SELECT * FROM Cust1;
+
+CNUM             BAL                                                                                
+--------- ----------                                                                                
+101              200                                                                                
+102              400                                                                                
+103              600                                                                                
+104              800                                                                                
+
+--> /* delete about half of the rows in table */
+--> DELETE FROM Cust1
+  2  WHERE bal < 600;
+
+2 rows deleted.
+
+--> SELECT * FROM Cust1;
+
+CNUM             BAL                                                                                
+--------- ----------                                                                                
+103              600                                                                                
+104              800                                                                                
+
+--> /* Part e */
+--> ROLLBACK;
+
+Rollback complete.
+
+--> /* Part f */
+--> SELECT * FROM Cust1;
+
+CNUM             BAL                                                                                
+--------- ----------                                                                                
+101              200                                                                                
+102              400                                                                                
+103              600                                                                                
+104              800                                                                                
+
+--> /* Part g */
+--> DELETE FROM Cust1
+  2  WHERE cnum = 101;
+
+1 row deleted.
+
+--> SAVEPOINT point1;
+
+Savepoint created.
+
+--> SELECT * FROM Cust1;
+
+CNUM             BAL                                                                                
+--------- ----------                                                                                
+102              400                                                                                
+103              600                                                                                
+104              800                                                                                
+
+--> /* Part h */
+--> DELETE FROM Cust1
+  2  WHERE cnum = 102;
+
+1 row deleted.
+
+--> SELECT * FROM Cust1;
+
+CNUM             BAL                                                                                
+--------- ----------                                                                                
+103              600                                                                                
+104              800                                                                                
+
+--> SAVEPOINT point2;
+
+Savepoint created.
+
+--> /* Part i */
+--> ROLLBACK point1;
+ROLLBACK point1
+         *
+ERROR at line 1:
+ORA-02181: invalid option to ROLLBACK WORK 
+
+
+--> ROLLBACK SAVEPOINT point1;
+ROLLBACK SAVEPOINT point1
+         *
+ERROR at line 1:
+ORA-02181: invalid option to ROLLBACK WORK 
+
+
+--> ROLLBACK TO SAVEPOINT point1;
+
+Rollback complete.
+
+--> SELECT * FROM Cust1;
+
+CNUM             BAL                                                                                
+--------- ----------                                                                                
+102              400                                                                                
+103              600                                                                                
+104              800                                                                                
+
+--> /* TODO: ADD EXPLAINATION IN SUBMISSION */
+--> /* Part j */
+--> ROLLBACK TO SAVEPOINT point2;
+ROLLBACK TO SAVEPOINT point2
+*
+ERROR at line 1:
+ORA-01086: savepoint 'POINT2' never established in this session or is invalid 
+
+
+--> /* TODO: ADD EXPLAINATION IN SUBMISSION */
+--> SPOOL OFF

@@ -1,0 +1,41 @@
+--> /* a) Create table called Cust */
+--> CREATE TABLE Cust(
+  2  cust_name CHAR(3),
+  3  address VARCHAR(20),
+  4  balance NUMERIC(5)
+  5  );
+
+Table created.
+
+--> /* b/c) Insert at least 5 rows into table */
+--> INSERT INTO Cust VALUES(101,'101 Main Street',200);
+
+1 row created.
+
+--> INSERT INTO Cust VALUES(102,'102 Main Street',400);
+
+1 row created.
+
+--> INSERT INTO Cust VALUES(103,'103 Main Street', 600);
+
+1 row created.
+
+--> INSERT INTO Cust VALUES(104,'104 Main Street', 800);
+
+1 row created.
+
+--> INSERT INTO Cust VALUES(105,'105 Main Street',1000);
+
+1 row created.
+
+--> /* d) Display table with simple SELECT */
+--> SELECT * FROM Cust;
+
+CUST_NAME ADDRESS                                                         BALANCE                   
+--------- ------------------------------------------------------------ ----------                   
+101       101 Main Street                                                     200                   
+102       102 Main Street                                                     400                   
+103       103 Main Street                                                     600                   
+104       104 Main Street                                                     800                   
+105       105 Main Street                                                    1000                   
+--> SPOOL OFF
